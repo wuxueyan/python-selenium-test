@@ -59,6 +59,9 @@ class BasePage:
               "cssSelector":self.cssSelector,
               "default" : self.id
               }
+    #好几个人问我为什么return opertor.get(locator.getBy())后面为什么会有(locator)
+    #locator.getBy()得到的是一个字符串，这个字符串可以是css or id or xpath
+    #也就是说这句话的意思其实是：opertor.getid（locator）oropertor.getcss(locator)等
         if(opertor.get(locator.getBy())):
             return opertor.get(locator.getBy())(locator)
         else:
